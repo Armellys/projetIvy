@@ -102,11 +102,11 @@ Let's go!
         </java>
     </target>
 
-    <target name="resolve" depends="go"  >
+    <target name="report" depends="go"  >
 	<mkdir dir="${report.dir}" />
          <ivy:report todir="report"/>
     </target>
-  <target name="report" >
+  <target name="resolve" >
          <ivy:resolve/>
 	 <ivy:cachepath pathid="lib.path.id"/>
     </target>
