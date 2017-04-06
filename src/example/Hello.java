@@ -6,13 +6,15 @@ import java.util.List;
 import java.util.ListIterator;
 import java.lang.Object;
 import java.io.*;
-import com.csvreader.CsvReader;
+//import org.opencsv.CVSReader;
+import com.opencsv.CSVReader;
 import org.apache.commons.lang.WordUtils;
 
 public class Hello {
     public static void main(String[] args) {
 	int monmax = 0;
-	CsvReader reader = new CsvReader(new FileReader("data.csv"));
+	try {
+	CSVReader reader = new CSVReader(new FileReader("data.csv"));
 	List<String[]> myEntries = reader.readAll();
 	System.out.println("Nombre dans le list : "+myEntries.size());
 	 for(int i = 0; i < myEntries.size(); i++){
@@ -23,6 +25,12 @@ public class Hello {
 			monmax = m.intValue();
 		}*/
 	}
+
+	} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	
 	System.out.println("Max : " + monmax);
         String  message = "hello ivy !";
