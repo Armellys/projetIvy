@@ -103,7 +103,7 @@ Let's go!
     </target>
 
     <target name="report" depends="go"  >
-	<mkdir dir="${report.dir}" />
+	
          <ivy:report todir="report"/>
     </target>
   <target name="resolve" >

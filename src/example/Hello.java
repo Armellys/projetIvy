@@ -1,12 +1,12 @@
 
 package example;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 import java.lang.Object;
 import java.io.*;
-//import org.opencsv.CVSReader;
 import com.opencsv.CSVReader;
 import org.apache.commons.lang.WordUtils;
 
@@ -18,12 +18,12 @@ public class Hello {
 	List<String[]> myEntries = reader.readAll();
 	System.out.println("Nombre dans le list : "+myEntries.size());
 	 for(int i = 0; i < myEntries.size(); i++){
-		System.out.println("Élément à l'index " + i + " = " + myEntries.get(i));
-		/*if (monmax < myEntries.get(i)){
-			String s = Arrays.asList(myEntries.get(i)).toString();
-			Integer m = new Integer(s);
+		System.out.println("Élément à l'index " + i + " = " + myEntries.get(i)[1]);
+		Integer m = new Integer(myEntries.get(i)[1]);
+		if (monmax < m.intValue()){
+		
 			monmax = m.intValue();
-		}*/
+		}
 	}
 
 	} catch (FileNotFoundException e) {
